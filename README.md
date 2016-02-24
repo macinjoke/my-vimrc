@@ -1,2 +1,3 @@
 # my-vimrc
-My .vimrc setting
+- My .vimrc setting
+- public domain
