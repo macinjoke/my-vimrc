@@ -1,2 +1,2 @@
 colorscheme desert 
-set guifont=Monospace\ 11
+set guifont=Monospace\ 15

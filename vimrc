@@ -69,9 +69,13 @@ set autoindent
 set smartindent
 
 "mapping config
+""セミコロンをコロンに
 nnoremap ; :
-nnoremap <F11> :!ruby %<cr>
-nnoremap <C-F11> :w<cr>:!ruby %<cr>
+""[Ctrl+]F11でrubyとpythonを[保存]実行
+autocmd BufNewFile,BufRead *.rb nnoremap <F11> :!ruby %<cr>
+autocmd BufNewFile,BufRead *.rb nnoremap <C-F11> :w<cr>:!ruby %<cr>
+autocmd BufNewFile,BufRead *.py nnoremap <F11> :!python %<cr>
+autocmd BufNewFile,BufRead *.py nnoremap <C-F11> :w<cr>:!python %<cr>
 
 inoremap { {}<LEFT>
 inoremap [ []<LEFT>
@@ -79,6 +83,7 @@ inoremap ( ()<LEFT>
 inoremap " ""<LEFT>
 inoremap ' ''<LEFT>
 inoremap ` ``<LEFT>
+
 inoremap <S-cr> <Esc>o
 inoremap <C-S-cr> <Esc>O
 
