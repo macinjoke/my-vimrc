@@ -32,6 +32,14 @@ NeoBundle 'tpope/vim-endwise'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 " vimを立ち上げたときに、自動的にvim-indent-guidesをオンにする
 "let g:indent_guides_enable_on_vim_startup = 1
+" コメントON/OFFを手軽に実行
+NeoBundle 'tomtom/tcomment_vim'
+" 括弧周りの入力補助
+NeoBundle 'kana/vim-smartinput'
+" コマンド結果をバッファーに出力
+NeoBundle 'tyru/capture.vim'
+" unite-sourceを元にインタフェースを操作する
+NeoBundle 'Shougo/unite.vim'
 
 " Required:
 call neobundle#end()
@@ -44,23 +52,31 @@ filetype plugin indent on
 NeoBundleCheck
 "End NeoBundle Scripts-------------------------
 
+"augroup の削除
+augroup myvimrc
+  autocmd!
+augroup END
 
+"set option
 set runtimepath+=~/.vim/
 runtime! userautoload/*.vim
 set number
 set mouse=a
-set backspace=indent
+set backspace=indent,eol,start
 set whichwrap=b,s,[,],~
+set scrolloff=10
+set sidescrolloff=16
 set wildmenu wildmode=list
 syntax on
 set hlsearch
 set cursorline
 set laststatus=1
 set statusline=%F%r%=%p
+""encoding config
 set encoding=utf-8
 set fileencoding=utf-8
 set fileencodings=utf-8,iso-2022-jp,cp932,sjis,ecu-jp
-"indent config
+""indent config
 set expandtab
 set tabstop=4
 set shiftwidth=2
@@ -68,22 +84,53 @@ set softtabstop=2
 set autoindent
 set smartindent
 
+set clipboard=unnamedplus,autoselect
 "mapping config
 ""セミコロンをコロンに
 nnoremap ; :
-""[Ctrl+]F11でrubyとpythonを[保存]実行
-autocmd BufNewFile,BufRead *.rb nnoremap <F11> :!ruby %<cr>
-autocmd BufNewFile,BufRead *.rb nnoremap <C-F11> :w<cr>:!ruby %<cr>
-autocmd BufNewFile,BufRead *.py nnoremap <F11> :!python %<cr>
-autocmd BufNewFile,BufRead *.py nnoremap <C-F11> :w<cr>:!python %<cr>
-
-inoremap { {}<LEFT>
-inoremap [ []<LEFT>
-inoremap ( ()<LEFT>
-inoremap " ""<LEFT>
-inoremap ' ''<LEFT>
-inoremap ` ``<LEFT>
-
+nnoremap : ;
+"改行
 inoremap <S-cr> <Esc>o
 inoremap <C-S-cr> <Esc>O
+
+""auto semicolon config
+" function! IsEndSemicolon()
+"   let c = getline(".")[col("$")-2]
+"   if c != ';'
+"     return 1
+"   else
+"     return 0
+"   endif
+" endfunction
+" inoremap <expr>;; IsEndSemicolon() ? "<C-O>$;<CR>" : "<C-O>$<CR>"
+
+""ナビゲーションマッピング
+nnoremap <C-Tab> gt
+nnoremap <C-S-Tab> gT
+nnoremap <C-S-l> :<C-u>tabm+1<cr>
+nnoremap <C-S-h> :<C-u>tabm-1<cr>
+nnoremap <M-1> 1gt
+nnoremap <M-2> 2gt
+nnoremap <M-3> 3gt
+nnoremap <M-4> 4gt
+nnoremap <M-5> 5gt
+nnoremap <M-6> 6gt
+nnoremap <M-7> 7gt
+nnoremap <M-8> 8gt
+nnoremap <M-9> :<C-u>tablast<cr>
+
+""load vimrc
+nnoremap <F5> :<C-u>so $MYVIMRC<cr>:so $MYGVIMRC<cr>
+""open vimrc
+nnoremap <F6> :<C-u>tabe $MYVIMRC<cr>
+""quick help
+nnoremap <C-h> :<C-u>h<Space>
+
+cnoremap ; <cr>
+cnoremap <M-;> ;
+
+"行末スペースをハイライトで可視化
+autocmd myvimrc VimEnter,WinEnter * match Error /\s\+$/
+"行末スペースを保存時に取り除く
+autocmd myvimrc BufWritePre * %s/\s\+$//e
 
