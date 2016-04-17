@@ -75,7 +75,7 @@ set statusline=%F%r%=%p
 ""encoding config
 set encoding=utf-8
 set fileencoding=utf-8
-set fileencodings=utf-8,iso-2022-jp,cp932,sjis,ecu-jp
+set fileencodings=utf-8,iso-2022-jp,cp932,sjis,euc-jp
 ""indent config
 set expandtab
 set tabstop=4
