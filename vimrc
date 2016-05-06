@@ -40,6 +40,8 @@ NeoBundle 'kana/vim-smartinput'
 NeoBundle 'tyru/capture.vim'
 " unite-sourceを元にインタフェースを操作する
 NeoBundle 'Shougo/unite.vim'
+" Twitterプラグイン
+NeoBundle 'TwitVim'
 
 " Required:
 call neobundle#end()
