@@ -3,7 +3,7 @@ nnoremap <buffer> <F11> :!python %<cr>
 nnoremap <buffer> <C-F11> :w<cr>:!python %<cr>
 
 function! IsMatchNeedColonLine()
-  if match(getline("."), '\v^\s*(class|def|if|for|while)') >= 0
+  if match(getline("."), '\v^\s*(class|def|if|else|for|while)') >= 0
     return 1
   else
     return 0

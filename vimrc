@@ -42,6 +42,8 @@ NeoBundle 'tyru/capture.vim'
 NeoBundle 'Shougo/unite.vim'
 " Twitterプラグイン
 NeoBundle 'TwitVim'
+" Processingプラグイン
+NeoBundle 'sophacles/vim-processing'
 
 " Required:
 call neobundle#end()
@@ -125,8 +127,8 @@ nnoremap <M-9> :<C-u>tablast<cr>
 nnoremap <F5> :<C-u>so $MYVIMRC<cr>:so $MYGVIMRC<cr>
 ""open vimrc
 nnoremap <F6> :<C-u>tabe $MYVIMRC<cr>
-""quick help
-nnoremap <C-h> :<C-u>h<Space>
+""open help
+nnoremap <F1> :tab h<cr>
 
 cnoremap ; <cr>
 cnoremap <M-;> ;
