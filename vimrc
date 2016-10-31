@@ -89,6 +89,9 @@ set autoindent
 set smartindent
 
 set clipboard=unnamedplus,autoselect
+
+set directory=~/.vim/swp
+
 "mapping config
 ""セミコロンをコロンに
 nnoremap ; :
@@ -129,6 +132,8 @@ nnoremap <F5> :<C-u>so $MYVIMRC<cr>:so $MYGVIMRC<cr>
 nnoremap <F6> :<C-u>tabe $MYVIMRC<cr>
 ""open help
 nnoremap <F1> :tab h<cr>
+"クリップボードからペースト
+nnoremap <Insert> "*p
 
 cnoremap ; <cr>
 cnoremap <M-;> ;
