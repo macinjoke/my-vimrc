@@ -45,6 +45,12 @@ NeoBundle 'TwitVim'
 " Processingプラグイン
 NeoBundle 'sophacles/vim-processing'
 
+NeoBundle 'eagletmt/ghcmod-vim'
+
+NeoBundle 'Shougo/vimproc.vim.git'
+
+NeoBundle 'deris/vim-duzzle'
+
 " Required:
 call neobundle#end()
 
@@ -94,8 +100,8 @@ set directory=~/.vim/swp
 
 "mapping config
 ""セミコロンをコロンに
-nnoremap ; :
-nnoremap : ;
+"nnoremap ; :
+"nnoremap : ;
 "改行
 inoremap <S-cr> <Esc>o
 inoremap <C-S-cr> <Esc>O
@@ -135,7 +141,7 @@ nnoremap <F1> :tab h<cr>
 "クリップボードからペースト
 nnoremap <Insert> "*p
 
-cnoremap ; <cr>
+"cnoremap ; <cr>
 cnoremap <M-;> ;
 
 "行末スペースをハイライトで可視化
