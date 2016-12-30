@@ -99,9 +99,9 @@ set clipboard=unnamedplus,autoselect
 set directory=~/.vim/swp
 
 "mapping config
-""セミコロンをコロンに
-"nnoremap ; :
-"nnoremap : ;
+"セミコロンをコロンに
+nnoremap ; :
+nnoremap : ;
 "改行
 inoremap <S-cr> <Esc>o
 inoremap <C-S-cr> <Esc>O
