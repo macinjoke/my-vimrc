@@ -141,8 +141,8 @@ nnoremap <F1> :tab h<cr>
 "クリップボードからペースト
 nnoremap <Insert> "*p
 
-cnoremap ; <cr>
-cnoremap <C-m> ;
+"cnoremap ; <cr>
+"cnoremap <C-m> ;
 
 "行末スペースをハイライトで可視化
 autocmd myvimrc VimEnter,WinEnter * match Error /\s\+$/
