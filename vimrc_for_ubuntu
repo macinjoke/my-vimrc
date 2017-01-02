@@ -94,8 +94,7 @@ set softtabstop=2
 set autoindent
 set smartindent
 
-"set clipboard=unnamedplus,autoselect
-set clipboard+=unnamed
+set clipboard=unnamedplus,autoselect
 
 set directory=~/.vim/swp
 
