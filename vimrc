@@ -97,6 +97,14 @@ set smartindent
 "set clipboard=unnamedplus,autoselect
 set clipboard+=unnamed
 
+"削除でコピーしないように
+nnoremap x "_x
+nnoremap d "_d
+nnoremap D "_D
+"コピーしたいとき用に
+nnoremap yd d
+nnoremap yD D
+
 set directory=~/.vim/swp
 
 "mapping config
