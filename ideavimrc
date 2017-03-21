@@ -20,6 +20,7 @@ set clipboard+=unnamed
 
 "削除でコピーしないように
 nnoremap x "_x
+vnoremap x "_x
 nnoremap D "_D
 "コピーしたいとき用に
 nnoremap yD D
