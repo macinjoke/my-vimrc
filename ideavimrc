@@ -26,9 +26,6 @@ nnoremap D "_D
 nnoremap yD D
 
 "mapping config
-"セミコロンをコロンに
-nnoremap ; :
-nnoremap : ;
 "改行
 inoremap <C-S-cr> <Esc>O
 
