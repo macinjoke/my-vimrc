@@ -106,21 +106,13 @@ nnoremap yD D
 
 set directory=~/.vim/swp
 
-"mapping config
 "改行
 inoremap <S-cr> <Esc>o
 inoremap <C-S-cr> <Esc>O
 
-""auto semicolon config
-" function! IsEndSemicolon()
-"   let c = getline(".")[col("$")-2]
-"   if c != ';'
-"     return 1
-"   else
-"     return 0
-"   endif
-" endfunction
-" inoremap <expr>;; IsEndSemicolon() ? "<C-O>$;<CR>" : "<C-O>$<CR>"
+"Emacs風横移動
+inoremap <C-f> <Right>
+inoremap <C-b> <Left>
 
 ""ナビゲーションマッピング
 nnoremap <C-Tab> gt

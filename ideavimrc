@@ -25,9 +25,12 @@ nnoremap D "_D
 "コピーしたいとき用に
 nnoremap yD D
 
-"mapping config
 "改行
 inoremap <C-S-cr> <Esc>O
+
+"Emacs風横移動
+inoremap <C-f> <Right>
+inoremap <C-b> <Left>
 
 "クリップボードからペースト
 nnoremap <Insert> "*p
