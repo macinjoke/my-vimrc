@@ -114,6 +114,9 @@ inoremap <C-S-cr> <Esc>O
 inoremap <C-f> <Right>
 inoremap <C-b> <Left>
 
+"ヴィジュアルモード時にスペースでコピー
+vnoremap <Space> y
+
 ""ナビゲーションマッピング
 nnoremap <C-Tab> gt
 nnoremap <C-S-Tab> gT
