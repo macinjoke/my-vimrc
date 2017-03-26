@@ -1,5 +1,5 @@
 
-"set option
+" set option
 set runtimepath+=~/.vim/
 runtime! userautoload/*.vim
 set number
@@ -15,26 +15,30 @@ set cursorline
 set laststatus=1
 set statusline=%F%r%=%p
 
-"set clipboard=unnamedplus,autoselect
+" set clipboard=unnamedplus,autoselect
 set clipboard+=unnamed
 
-"削除でコピーしないように
+" ()''""とかのユーティリティ
+set surround
+vmap s <Plug>VSurround
+
+" 削除でコピーしないように
 nnoremap x "_x
 vnoremap x "_x
 nnoremap D "_D
-"コピーしたいとき用に
+" コピーしたいとき用に
 nnoremap yD D
 
-"改行
+" 改行
 inoremap <C-S-cr> <Esc>O
 
-"Emacs風横移動
+" Emacs風横移動
 inoremap <C-f> <Right>
 inoremap <C-b> <Left>
 
-"ヴィジュアルモード時にスペースでコピー
+" ヴィジュアルモード時にスペースでコピー
 vnoremap <Space> y
 
-"クリップボードからペースト
+" クリップボードからペースト
 nnoremap <Insert> "*p
 

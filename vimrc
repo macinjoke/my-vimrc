@@ -51,6 +51,11 @@ NeoBundle 'Shougo/vimproc.vim.git'
 
 NeoBundle 'deris/vim-duzzle'
 
+" ()''""とかのユーティリティ
+NeoBundle 'tpope/vim-surround'
+xmap s <Plug>VSurround
+xmap gs <Plug>VgSurround
+
 " Required:
 call neobundle#end()
 
