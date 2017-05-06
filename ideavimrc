@@ -42,3 +42,7 @@ vnoremap <Space> y
 " クリップボードからペースト
 nnoremap <Insert> "*p
 
+" 折りたたみに関する追加設定(現在のカーソルから再帰的にCollapse, Expand)
+nnoremap zC :action CollapseRegionRecursively<CR>
+nnoremap zO :action ExpandRegionRecursively<CR>
+
