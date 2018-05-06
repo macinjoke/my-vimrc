@@ -29,6 +29,22 @@ nnoremap D "_D
 " コピーしたいとき用に
 nnoremap yD D
 
+"ideavimrcでは使えなかった。
+"" vモードの置換連続ペースト用 https://qiita.com/hikaruna/items/83c1220eede810bee492
+"function! Put_text_without_override_register()
+"  let line_len = strlen(getline('.'))
+"  execute "normal! `>"
+"  let col_loc = col('.')
+"  execute 'normal! gv"_x'
+"  if line_len == col_loc
+"    execute 'normal! p'
+"  else
+"    execute 'normal! P'
+"  endif
+"endfunction
+"xnoremap <silent> p :call Put_text_without_override_register()<CR>
+
+
 " 改行
 inoremap <C-S-cr> <Esc>O
 
@@ -46,3 +62,14 @@ nnoremap <Insert> "*p
 nnoremap zC :action CollapseRegionRecursively<CR>
 nnoremap zO :action ExpandRegionRecursively<CR>
 
+"-- os側のキーバインドでemacs風にしている場合に本来のvimの挙動に戻す--
+nnoremap <Right> <C-f>
+nnoremap <Left> <C-b>
+nnoremap <Up> <C-p>
+nnoremap <Down> <C-n>
+
+vnoremap <Right> <C-f>
+vnoremap <Left> <C-b>
+vnoremap <Up> <C-p>
+vnoremap <Down> <C-n>
+"---------------------------------------------------------------------

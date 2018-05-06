@@ -109,15 +109,26 @@ nnoremap D "_D
 "コピーしたいとき用に
 nnoremap yD D
 
+".ideavimrc では効かないので保留
+"" vモードの置換連続ペースト用 https://qiita.com/hikaruna/items/83c1220eede810bee492
+"function! Put_text_without_override_register()
+"  let line_len = strlen(getline('.'))
+"  execute "normal! `>"
+"  let col_loc = col('.')
+"  execute 'normal! gv"_x'
+"  if line_len == col_loc
+"    execute 'normal! p'
+"  else
+"    execute 'normal! P'
+"  endif
+"endfunction
+"xnoremap <silent> p :call Put_text_without_override_register()<CR>
+
 set directory=~/.vim/swp
 
 "改行
 inoremap <S-cr> <Esc>o
 inoremap <C-S-cr> <Esc>O
-
-"Emacs風横移動
-inoremap <C-f> <Right>
-inoremap <C-b> <Left>
 
 "ヴィジュアルモード時にスペースでコピー
 vnoremap <Space> y
@@ -154,3 +165,19 @@ autocmd myvimrc VimEnter,WinEnter * match Error /\s\+$/
 "行末スペースを保存時に取り除く
 autocmd myvimrc BufWritePre * %s/\s\+$//e
 
+"Emacs風横移動
+inoremap <C-f> <Right>
+inoremap <C-b> <Left>
+
+"-- os側のキーバインドでemacs風にしている場合に本来のvimの挙動に戻す--
+nnoremap <Right> <C-f>
+nnoremap <Left> <C-b>
+nnoremap <Up> <C-p>
+nnoremap <Down> <C-n>
+
+vnoremap <Right> <C-f>
+vnoremap <Left> <C-b>
+"連続コピーを可能にする
+vnoremap <Up> <C-p>
+vnoremap <Down> <C-n>
+"---------------------------------------------------------------------
